@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0DD4166-8AF7-4677-B8F8-63239A748B4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TodoBeBlue.Dados</RootNamespace>
+    <AssemblyName>TodoBeBlue.Dados</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201607272301598_Inicial.cs" />
+    <Compile Include="Migrations\201607272301598_Inicial.Designer.cs">
+      <DependentUpon>201607272301598_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607272305476_AdicinaPrioridadeTodo.cs" />
+    <Compile Include="Migrations\201607272305476_AdicinaPrioridadeTodo.Designer.cs">
+      <DependentUpon>201607272305476_AdicinaPrioridadeTodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607282104262_ExclusaoStatusInclusaoFeito.cs" />
+    <Compile Include="Migrations\201607282104262_ExclusaoStatusInclusaoFeito.Designer.cs">
+      <DependentUpon>201607282104262_ExclusaoStatusInclusaoFeito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607292300487_AdicionandoCategoriaIdEmTodo.cs" />
+    <Compile Include="Migrations\201607292300487_AdicionandoCategoriaIdEmTodo.Designer.cs">
+      <DependentUpon>201607292300487_AdicionandoCategoriaIdEmTodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\CategoriaRepositorio.cs" />
+    <Compile Include="Repositorios\TodoRepositorio.cs" />
+    <Compile Include="TodoContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TodoBeBlue.Dominio\TodoBeBlue.Dominio.csproj">
+      <Project>{f84512b9-3a4d-41a0-8123-d7f76412dde1}</Project>
+      <Name>TodoBeBlue.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607272301598_Inicial.resx">
+      <DependentUpon>201607272301598_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607272305476_AdicinaPrioridadeTodo.resx">
+      <DependentUpon>201607272305476_AdicinaPrioridadeTodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607282104262_ExclusaoStatusInclusaoFeito.resx">
+      <DependentUpon>201607282104262_ExclusaoStatusInclusaoFeito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607292300487_AdicionandoCategoriaIdEmTodo.resx">
+      <DependentUpon>201607292300487_AdicionandoCategoriaIdEmTodo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
