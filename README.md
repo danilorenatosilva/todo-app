@@ -6,6 +6,7 @@
 <li>	.NET Framework 4.5</li>
 <li>	Web API</li>
 <li>	C#</li>
+<li>	SQL Server</li>
 <li>	AngularJs</li>
 <li>	Bootstrap</li>
 <li>	jQuery</li>
